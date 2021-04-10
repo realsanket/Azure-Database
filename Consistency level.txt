@@ -1,0 +1,18 @@
+Notes on Consistency level
+Consistency Levels for Azure Cosmos DB
+Below is a chart from the Microsoft documentation on the spectrum for Azure Cosmos DB consistency levels
+
+Reference - https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels
+
+
+
+
+1) Strong - Here the reads will be guaranteed to give the most recent committed version of an item. Where can you see a use case of this. Let's say you have an application used by a hospital. Let' say that the hospital has multiple locations. If the hospital always to get the latest version always for a patient's records at any point in time, they might need Strong consistency. Since this is critical , it is important to always have the most recent information.
+
+2) Bounded staleness - Here the reads can lag behind the writes by at most "K" versions of an item or by "T" time interval.
+
+3) Session - This guarantees consistency within a particular session
+
+4) Consistent prefix - Here the client will never see an out of order write
+
+5) Eventual - This is the least form of consistency wherein the client will not be guaranteed on the order of the writes

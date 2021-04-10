@@ -1,0 +1,151 @@
+Cosmos DB - Classes used
+This is quick recap of the classes used for Cosmos DB for .Net Core 3.1
+Microsoft.Azure.Cosmos v3.8.0 dll - SQL API
+
+1) CosmosClient Class - This is used as a logical representation of the Azure Cosmos DB account. The client can then be used to configure and execute requests against the Azure Cosmos DB database service.
+
+You can use the Constructor of the CosmosClient class to pass in the connection string to connect to the Cosmos DB account.
+
+You then have methods such as
+
+a) CreateDatabaseAsync - This can be used to create a database
+
+b) GetDatabase - This returns a reference to the database
+
+c) GetContainer - This returns a reference to the container
+
+
+
+2) Database class - This is used as a logical representation of the Azure Cosmos DB database in an account
+
+By calling the GetDatabase method on the CosmosClient class, you get an object of the Database class.
+
+The class has the following properties
+
+a) Id - This gives the Id of the database
+
+You then have methods such as
+
+a) CreateContainerAsync - This can be used to create a container
+
+b) GetContainer - This returns a reference to the container
+
+
+
+3) Container class - This is used as a logical representation of the Azure Cosmos DB container in a database
+
+The class has the following properties
+
+a) Id - This gives the Id of the container
+
+b) Scripts - This returns the scripts attached to the container
+
+The class has the following methods
+
+a) CreateItemAsync - This is used to create an item in the container. Here the required parameters are the item and the parition key. The item needs to be a JSON serializable object that must contain an id property. If the partition key is not mentioned, it will be taken from the item parameter.
+
+The CreateItemAsync then returns an object of the type ItemResponse<T>. This contains the service response from the operation.
+
+b) GetItemQueryIterator - This used to create a query for items in a container. This returns a FeedIterator
+
+The FeedIterator class is used to give an iterator that can be used to iterate through a set of results sent from the Execution of a query.
+
+The FeedIterator class has a property named HasMoreResults that checks whether there are more results in the result set.
+
+The FeedIterator class has a method named ReadNextAsync that is used to read the next item in the result set
+
+The ReadNextAsync method then returns a FeedResponse object. This object can be used to get the actual results in the response.
+
+The ItemResponse object has the following properties
+
+i) A CosmosDiagnostics Object - Here you have methods for getting the Client Elapsed time and other diagnostic information
+
+ii) Request Charge - Here you get the request units consumed by the request
+
+c) ReadItemAsync - This is used to read a particular item from the container based on the partition key and id value.
+
+d) ReplaceItemAsync - This replaces an item in the container. Here you need to pass the item. The item is a JSON serializable object that must contain an id property. You must also pass the id value for the item. You also need to pass in the partition key. If you don't mention one, it will be taken from the item itself.
+
+e) DeleteItemAsync - - This is used to delete a particular item from the container based on the partition key and id value.
+
+
+
+4) PartitionKey Class - This is used as a logical representation of a partition key value in Azure Cosmos DB
+
+Here you can use the construtor to create a Partition Key object
+
+a) PartitionKey(Boolean)
+
+b) PartitionKey(Double)
+
+c) PartitionKey(String)
+
+
+
+5) QueryDefinition Class - This is used to define a Cosmos SQL query
+
+Here you can use the construtor to create a Cosmos SQL query object
+
+a) QueryDefinition(String)
+
+6) When working with scripts
+
+The Container class contains a script property. This returns a Scripts class object.
+
+The Scripts class object contains the following methods
+
+a) ExecuteStoredProcedureAsync - This is used to execute a stored procedure. This method has the following features
+
+i) It returns a TOutput which is JSON serializable
+
+ii) As a parameter, you pass in the id of the stored procedure
+
+iii) As a parameter, you pass in the partition key , if the stored procedure is used to create a new item
+
+iv) As a parameter, you pass in an array of dynamic objects , if the stored procedure is used to create a new item
+
+
+
+Microsoft.Azure.Cosmos.Table v1.0.7 - Table API
+
+1) CloudStorageAccount Class - This is used as a logical representation of the Azure Cosmos DB Table account.
+
+You then have methods such as
+
+a) Parse(String) - Here you pass in the connectiong string to the Azure Cosmos DB account. This will return a CloudStorageAccount object
+
+b) CreateCloudTableClient - This is used to give back an object that is used as a logical representation of the Microsoft Azure Table service.
+
+
+
+2) CloudTableClient Class - This is used as a logical representation of the Microsoft Azure Table service.
+
+You then have methods such as
+
+a) GetTableReference(String) - This is used to get a reference to an existing table
+
+
+
+3) TableOperation Class - This is used to represent a single table operation.
+
+You then have methods such as
+
+a) Insert(ITableEntity) - This is used to insert an entity into a table. Here you need to pass in an object that implements the ITableEntity interface
+
+b) Retrieve - This can be used to get an entity based on the partition key and row key value
+
+c) Delete(ITableEntity) - This is used to delete an entity from the table
+
+d) InsertOrReplace(ITableEntity) - This is used to replace an entity from the table
+
+
+
+4) CloudTable Class - This is used to represent an Azure table.
+
+You then have methods such as
+
+a) CreateAsync - This can be used to create a table
+
+b) ExecuteAsync - This is used to execute an operation on the table based on the TableOperation object
+
+This method returns a TableResult object. In the TableResult object, you can use the Result property to get back the result of the operation.

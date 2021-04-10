@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "tmbUH5RUDF/MF+gl2pxc7Qn4De1J369nK4XzA1creEXreU1vyhxDYCb/BhOfh25RkoKvX0IlYK8xNx/a4RRebg==",
+  "success": true,
+  "projectFilePath": "C:\\App\\cosmos-consistency-update\\cosmos-metrics\\cosmosupdate.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Allan\\.nuget\\packages\\microsoft.azure.cosmos\\3.8.0\\microsoft.azure.cosmos.3.8.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.private.servicemodel\\4.5.0\\system.private.servicemodel.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.reflection.dispatchproxy\\4.5.0\\system.reflection.dispatchproxy.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.servicemodel.primitives\\4.5.0\\system.servicemodel.primitives.4.5.0.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
