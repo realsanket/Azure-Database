@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator-release-notes
